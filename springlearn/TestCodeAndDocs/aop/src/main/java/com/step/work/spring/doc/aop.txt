@@ -1,0 +1,60 @@
+public class SayImplAroundAdvice implements MethodInterceptor
+       业务处理
+public interface MethodInterceptor extends Interceptor 
+public interface Interceptor extends Advice
+public interface Advice
+
+public class ProxyFactory extends ProxyCreatorSupport
+       private AopProxyFactory aopProxyFactory;
+public class ProxyCreatorSupport extends AdvisedSupport
+       private List<Advisor> advisors = new LinkedList<Advisor>();
+public class AdvisedSupport extends ProxyConfig implements Advised
+	TargetSource targetSource = EMPTY_TARGET_SOURCE;(需要被代理对象的包装)
+	private List<Advisor> advisors = new LinkedList<Advisor>();(切面通知者)
+public class ProxyConfig implements Serializable
+public interface Advised extends TargetClassAware 
+public interface TargetClassAware
+
+public interface AopProxyFactory
+      get public interface AopProxy
+public class DefaultAopProxyFactory implements AopProxyFactory, Serializable
+
+public interface AopProxy
+       get proxyObject();
+class CglibAopProxy implements AopProxy, Serializable
+final class JdkDynamicAopProxy implements AopProxy, InvocationHandler, Serializable
+	  private final AdvisedSupport advised
+	  
+public class DefaultIntroductionAdvisor implements IntroductionAdvisor, ClassFilter, Ordered, Serializable
+	private final Set<Class<?>> interfaces = new LinkedHashSet<Class<?>>();
+	private final Advice advice;
+public interface IntroductionAdvisor extends Advisor, IntroductionInfo
+	public interface Advisor
+	public interface IntroductionInfo
+	public interface ClassFilter
+	public interface Ordered
+	
+public class SingletonTargetSource implements TargetSource, Serializable
+		private final Object target(需要被代理的对象);
+public interface TargetSource extends TargetClassAware
+public interface TargetClassAware
+
+class TruePointcut implements Pointcut
+public interface Pointcut 
+
+(包装Advice成Advisor)
+public class DefaultPointcutAdvisor extends AbstractGenericPointcutAdvisor implements Serializable
+		private Pointcut pointcut = Pointcut.TRUE;
+public abstract class AbstractGenericPointcutAdvisor extends AbstractPointcutAdvisor
+		private Advice advice;
+public abstract class AbstractPointcutAdvisor implements PointcutAdvisor, Ordered, Serializable
+public interface PointcutAdvisor extends Advisor
+       Pointcut getPointcut();
+public interface Advisor
+       Advice getAdvice();
+
+-----------------------
+Introduction 介绍 引入 导言 引论 概论
+advisor 顾问 导师
+advice  建议 忠告
+ 

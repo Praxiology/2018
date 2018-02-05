@@ -1,0 +1,25 @@
+ org.springframework.context.support.ClassPathXmlApplicationContext
+ 	private Resource[] configResources;
+ org.springframework.context.support.AbstractXmlApplicationContext
+ 	private boolean validating = true;
+ org.springframework.context.support.AbstractRefreshableConfigApplicationContext
+    private String[] configLocations;
+	private boolean setIdCalled = false;
+org.springframework.context.support.AbstractRefreshableApplicationContext
+    private Boolean allowBeanDefinitionOverriding;
+	private Boolean allowCircularReferences;
+	/** Bean factory for this context */
+	private DefaultListableBeanFactory beanFactory;
+	/** Synchronization monitor for the internal BeanFactory */
+	private final Object beanFactoryMonitor = new Object();
+	
+	http://blog.csdn.net/faadfafasd/article/details/47680591
+	http://blog.csdn.net/faadfafasd/article/details/47680591
+	
+	
+	ProxyFactoryBean getSingletonInstance() 322
+	AbstractBeanFactory 1643
+	ProxyCreatorSupport 105
+	FactoryBeanRegistrySupport 130
+	DefaultAopProxyFactory 61/66
+ 
