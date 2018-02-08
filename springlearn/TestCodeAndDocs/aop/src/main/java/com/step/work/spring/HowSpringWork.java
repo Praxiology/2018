@@ -41,7 +41,7 @@ private static String basepath = "com/step/demo/spring/config";
 	
 	private static String[] paths = {path[0],basepath+"/aopAr.xml"};
 	
-	//@Test
+	@Test
 	public void springInit() {
 		ApplicationContext app = new ClassPathXmlApplicationContext(paths);
 		UserDaoInf usrDao =  app.getBean("usrDao",UserDaoInf.class);
@@ -56,7 +56,7 @@ private static String basepath = "com/step/demo/spring/config";
 	/**
 	 *以下种情况可以强转 
 	 * **/
-	@Test
+	//@Test
 	public void TestProxyFactory() {
 		ProxyFactory pfbf = new ProxyFactory();
 		pfbf.setTarget(new UserDao());

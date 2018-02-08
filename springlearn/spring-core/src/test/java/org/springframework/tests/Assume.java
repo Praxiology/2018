@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
 import java.util.Set;
 
 import org.apache.commons.logging.Log;
-import org.junit.AssumptionViolatedException;
+//import org.junit.AssumptionViolatedException;
 
 import org.springframework.util.ClassUtils;
 
@@ -60,7 +60,7 @@ public abstract class Assume {
 	 */
 	public static void group(TestGroup group) {
 		if (!GROUPS.contains(group)) {
-			throw new AssumptionViolatedException("Requires unspecified group " + group + " from " + GROUPS);
+		//	throw new AssumptionViolatedException("Requires unspecified group " + group + " from " + GROUPS);
 		}
 	}
 
@@ -105,7 +105,7 @@ public abstract class Assume {
 			method.invoke(null);
 		}
 		catch (Throwable ex) {
-			throw new AssumptionViolatedException("Requires GraphicsEnvironment that can load fonts", ex);
+		//	throw new AssumptionViolatedException("Requires GraphicsEnvironment that can load fonts", ex);
 		}
 	}
 
