@@ -5,6 +5,7 @@ import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.alibaba.fastjson.JSON;
 import com.step.demo.spring.SayImplAroundAdvice;
 import com.step.demo.spring.SayImplBeforeAdvice;
 import com.step.demo.spring.User;
@@ -43,7 +44,9 @@ private static String basepath = "com/step/demo/spring/config";
 	
 	@Test
 	public void springInit() {
-		ApplicationContext app = new ClassPathXmlApplicationContext(paths);
+		ClassPathXmlApplicationContext app = new ClassPathXmlApplicationContext(paths);
+		
+		//System.out.println(JSON.toJSONString(app.getInfors(0)));
 		UserDaoInf usrDao =  app.getBean("usrDao",UserDaoInf.class);
 		usrDao.syaHello(new User("jack"));
 	}
