@@ -7,7 +7,11 @@ import org.junit.Test;
 //定向冒泡排序(双向排序)
 public class MaoPaoDXSort {
 
-	//
+	/**
+	 * 每次外循环都将相对最大最小的值向两端移动
+	 * 直到先前已经确定的元素数组位置
+	 * 比基本冒泡排序，减少了循环次数和，数组元素的复制次数
+	 * */
 	public static int[] sortToBg(int[] or) {
 		int ol = or.length;
 		for (int o = 0; o < ol; o++) {

@@ -7,7 +7,11 @@ import org.junit.Test;
 //选择排序
 public class SeclsetSort {
 	
-	//选择排序
+	/**
+	 * 选择排序
+	 * 每次外循环时，内循环都会找出最小元素的下标，移动值当前外循环的位置；
+	 * 减少复制交换的次数
+	 */
 	public static int[] sortToBg(int[] or) {
 		int selectIndex = 0;//被选中的下标
 		int ol = or.length;

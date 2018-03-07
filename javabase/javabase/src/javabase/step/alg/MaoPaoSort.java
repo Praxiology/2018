@@ -6,7 +6,12 @@ import org.junit.Test;
 
 //内存排序：冒泡排序
 public class MaoPaoSort {
-
+	
+	/**
+	 * 最基本的排序
+	 * 每次外循环都将最大的元素向右移动
+	 * 直到循环结束，循环数组所有元素长度的次数
+	 * **/
 	public static int[] sortToBg(int[] or) {
 		int orl = or.length;
 		int temp = 0;//中间变量
